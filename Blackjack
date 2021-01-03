@@ -1,0 +1,82 @@
+logo = """
+.------.            _     _            _    _            _    
+|A_  _ |.          | |   | |          | |  (_)          | |   
+|( \/ ).-----.     | |__ | | __ _  ___| | ___  __ _  ___| | __
+| \  /|K /\  |     | '_ \| |/ _` |/ __| |/ / |/ _` |/ __| |/ /
+|  \/ | /  \ |     | |_) | | (_| | (__|   <| | (_| | (__|   < 
+`-----| \  / |     |_.__/|_|\__,_|\___|_|\_\ |\__,_|\___|_|\_\\
+      |  \/ K|                            _/ |                
+      `------'                           |__/           
+"""
+
+import random
+#used in repl.it for clear function
+from replit import clear
+
+ # Dealer cards at start
+dealer_cards = []
+ # Player cards at start
+player_cards = []
+
+# Game Start
+def play_game():
+    print(logo)
+
+    while len(player_cards) != 2:
+        player_cards.append(random.randint(1, 11))
+        if len(player_cards) == 2:
+            print(f"Your cards: {player_cards}, current score: {sum(player_cards)}")
+    
+
+    while len(dealer_cards) != 2:
+        dealer_cards.append(random.randint(1, 11))
+        if len(dealer_cards) == 2:
+            print(f"Computer's first card: {dealer_cards[1]}")
+
+    
+   
+    # Sum of the Dealer cards
+    while sum(dealer_cards) < 17:
+        dealer_cards.append(random.randint(1, 11))
+    if sum(dealer_cards) == 21:
+        print("Dealer has 21 You lose!")
+        
+    if 11 in dealer_cards and sum(dealer_cards) > 21:
+        dealer_cards.remove(11)
+        dealer_cards.append(1)
+    
+        
+
+    # Sum of the Player cards + if statements related to who won
+    while sum(player_cards) < 21:
+        action_taken = str(input("Type 'y' to get another card, type 'n' to pass  "))
+        if action_taken == "y":
+            player_cards.append(random.randint(1, 11))
+            print(f"Your cards: {player_cards}, current score: {sum(player_cards)}")
+        else:
+            print(f"Computers final hand: {dealer_cards}, final score: {sum(dealer_cards)}")
+            print(f"Your final hand: {player_cards}, final score: {sum(player_cards)}")
+            if sum(dealer_cards) > 21:
+                print("Dealer has busted!")
+            elif sum(dealer_cards) > sum(player_cards):
+                print("Dealer wins!")
+                break
+            if sum(player_cards) == sum(dealer_cards):
+                print("Draw")
+                break
+            else:
+                print("You win!")
+                break
+
+    
+    if sum(player_cards) > 21:
+        print("You went over. You lose!")
+    elif sum(player_cards) == 21:
+        print("You have BLACKJACK! You Win!! 21")
+    
+        
+    
+while input(
+        "Do you want to play a game of Blackjack? Type 'y' or 'n': ") == "y":
+	clear()
+	play_game()
