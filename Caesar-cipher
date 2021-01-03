@@ -50,7 +50,7 @@ while not should_end:
   text = input("Type your message:\n").lower()
   shift = int(input("Type the shift number:\n"))
   #TODO-2: What if the user enters a shift that is greater than the number of letters in the alphabet?
-  #Try running the program and entering a shift number of 45.
+  
 
   shift = shift % 26
 
