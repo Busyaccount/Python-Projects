@@ -1,0 +1,62 @@
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+# Making variables into a list
+RPS = [rock, paper , scissors]
+
+import random
+# Deals with random computer choice 
+RPS_NUM_AI= random.randint(0,2)
+RPS_AI = RPS[RPS_NUM_AI]
+
+# INTRO- get player value and make sure it turns lower case
+print("Welcome to Rock Paper Scissor AI machine\n" + "Can you beat the AI? IF YOU DARE!!!!" )
+player = input("Type in your choice: rock, paper, or scissors\n")
+
+
+# This is may not seem right but can't get the player input to change to call a variable
+if player == "rock" and RPS_AI == scissors:
+  print(RPS[0] + RPS[2] + "YOU WIN")
+if player == "paper" and RPS_AI == scissors:
+  print(RPS[1] + RPS[2] + "YOU LOSE!")
+if player == "scissors" and RPS_AI == scissors:
+  print(RPS[2] + RPS[2] + "ITS A DRAW!" )
+
+if player == "rock" and RPS_AI == paper:
+  print(RPS[0] + RPS[1] + "YOU LOSE!")
+if player == "paper" and RPS_AI == paper:
+  print(RPS[1] + RPS[1] + "ITS A DRAW!")
+if player == "scissors" and RPS_AI == paper:
+  print(RPS[2] + RPS[1] + "YOU LOSE!" )
+
+if player == "rock" and RPS_AI == rock:
+  print(RPS[0] + RPS[0] + "ITS A DRAW!")
+if player == "paper" and RPS_AI == rock:
+  print(RPS[1] + RPS[0] + "YOU WIN!")
+if player == "scissors" and RPS_AI == rock:
+  print(RPS[2] + RPS[0] + "YOU LOSE!" )
+else:
+  print("You entered invald word! HOW DARE YOU!!!!")
