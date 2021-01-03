@@ -1,0 +1,60 @@
+print('''
+*******************************************************************************
+        ..           .            .           .            .           .        
+                     .            .           ..           .           .        
+.........*##(#**###### ####...##/##(.##/###.##..*##.######.##.###.,####(.       
+           ####  *## .######  #####  ###### ##../## ##     #####    ####        
+        .(####,  *## /##  ###.## (## #####   #####   ##### ##  ###/####/        
+        ..           .           ..           .            .           .        
+        ..           .           .. ,(#######*.            .           .        
+......  ..   .............. /############.############     .                    
+        ..              ################   ###############..                    
+        ..           ################(       ################/         .        
+        ..        #############   ####      ,###   .############       .        
+        .       ############  ##  .    #####  .   ##.  ###########     .        
+               ## ###########                 .      ##############(   .        
+             *###   ###########(###@,,,,,,,,,,,/%##.##########(  (###  .   .....
+        .   /###*    .     ####&,,,,/*%@/,(@*,,,,,,#,##    . ,    &@((..        
+        .   ### #/,*&(/,,,,,,,,,,(////,,,,,,,/(/%%//,,,,,,,,,,@(,,#/###..       
+        .  ##*    %/@*,,,,@//@/&/#%/%//////////(&(@&/%///#,*,,,,//   ##..       
+        .  #########@//*,,,,@#/. *%& &///////&  &&&@//&,,,,*,@// ######*        
+        .  ############(////&,,@&&&@&&//////%%&&&%%/((,(**((/&###,..............
+        .  #####*  #######,@//,,,,,,,/////////*(@*,,,//#@######*  #####/        
+        .       #########%&/@/,@/////////////////#@/,.&#,#########*    .        
+        .  .####  (######*,*//////(           .@%//%///(@#######   ####.        
+               (########,,,,,,#///@////////////%@///*(,,,,,&#######    .        
+.............##*...##/,,/#&/((%(#,/.........  .@@((((((%,&,,(###...##  .   .....
+        .      ####  #@&,/////,,,,,,,//##*#//#%,,,,,////#,@,   #####   .        
+        .         ##,/(,@////&@,,,,,//##.,,(/,,,*,,&&////#,,  ###      .        
+        .         #  &&*,%//&&&&,(&@///** *///%,@#&@@((,/,,&/@         .        
+        .           @(,@&*,(,&//@*,*          &,//@/(*,(,*////         .        
+.....   .   ..,%%%%%&//%///,,,&/////          *,,,/,,,,,&/&/%%%%%      .   .    
+        .     %%%%%%%%%%%//,,,,/////(         ,,,#,,,,,&%%%%%%%%%#              
+        .          *%%%%%%@/,@%%%%%%@@@@@@@@@@%%%%%&@%%%%%%%,          .        
+        .            .           .            .            .           .        
+*******************************************************************************
+''')
+print("Welcome to Treasure Island.")
+print("Your mission is to find the treasure.") 
+
+
+a = input("You walk down the your air ship, you can go either way. You look left and right. \n" "Fog covers the ground. Which way do you go left or right?\n").lower()
+
+
+
+if a == "left":
+  b = input("You walk on to a wood plank that is floating to shore. Its taking forever \n" "Should you swim or just wait?\n").lower()
+  if b == "wait":
+    c = input("You wait and the plank gets you to shore where theres three doors, \n Yellow,Red and Blue. Which one do you chose?").lower()
+    if c == "red":
+      print("You are pulled into the door way as fire starts to engulf you. You die. Game Over!")
+    elif c == " yellow":
+      print("You find baby yoda waiting for you in his pod. You say lets go home. You WIN!!")
+    elif c == "blue":
+      print("You find yourself in a dark room as lights start to flash on you and beast appear \n They jump on you and tear into you. You die! Game Over!")
+    else:
+      print("Your thoughts flood in of other things and you run back to your ship. You failed GAME OVER!")
+  else:
+    print("You started to swim and trout jump at you bring you down to the bottom of the lake! Game Over! ")
+elif a == "right":
+  print("You fell into a hole. Game Over!\n Want to play again?")  
