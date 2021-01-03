@@ -1,0 +1,43 @@
+logo = '''
+                         ___________
+                         \         /
+                          )_______(
+                          |"""""""|_.-._,.---------.,_.-._
+                          |       | | |               | | ''-.
+                          |       |_| |_             _| |_..-'
+                          |_______| '-' `'---------'` '-'
+                          )"""""""(
+                         /_________\\
+                       .-------------.
+                      /_______________\\
+'''
+
+print(logo)
+bidding_finished = False
+
+def highedst_bidder(bidding_database):
+    highest_bid = 0
+    winner = ""
+    for bidder in bidding_database:
+        bid_amount = bidding_database[bidder]
+        if bid_amount > highest_bid:
+            highest_bid = bid_amount
+            winner = bidder
+    print(f"The winner is {winner} with a bid of ${bidding_database}")
+
+
+while not bidding_finished:
+    name = input("What is your name?\n")
+    bid = input ("What is you bid?\n")
+    auction = {}
+    auction[name] = bid
+    next_person = input("Is there another person who would like to bid? Please type 'yes' or 'no'\n")
+    if next_person == "no":
+        bidding_finshed = True
+    elif next_person == "yes":
+        clear()
+
+
+
+           
+print(auction)
